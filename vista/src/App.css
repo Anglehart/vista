@@ -1,25 +1,100 @@
 main {
   display: flex;
   background: #ededed;
+  height: 100vh;
 }
 .user-info, .users-list {
   width: 50%;
-  min-width: 400px;
+  min-width: 500px;
   border: 1px solid #ccc;
   margin: 10px;
   box-shadow: 0 0 3px rgba(0,0,0,0.5);
   background: #ffffff;
+  height: calc(100% - 20px);
+  overflow-y: auto;
+}
+.user-info {
+  border: 1px solid #3398cc;
 }
 #resizer {
   width: 10px;
   min-height: 100%;
-  background: red;
   cursor: col-resize;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+.resizer__icon {
+  text-align: center;
+  line-height: 7px;
+  font-size: 25px;
+  width: 100%;
+}
+.user-info__title {
+  background: #3398cc;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.user-info__icon {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 22px;
+  cursor: pointer;
+}
+.user-info ul {
+  list-style: none;
+  padding: 0 10px;
+}
+.user-info li {
+  padding: 5px 0;
+}
+.user-info__line {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 3px 0;
 }
 .users-list__buttons {
   display: flex;
   background: #fafafa;
+  border-bottom: 1px solid #ccc;
+  user-select: none;
+  position: sticky;
+  top: 0px;
 }
 .users-list__buttons div {
   padding: 10px 15px;
+  cursor: pointer;
+}
+.active-btn {
+  border-bottom: 2px solid #3398cc;
+}
+.users-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.users-list tr {
+  border-left: 2px solid transparent;
+  border-bottom: 1px solid #e0e0e0;
+  user-select: none;
+}
+.users-list td {
+  cursor: pointer;
+  padding: 10px 0;
+}
+.users-list tr td:first-child, 
+.users-list tr th:first-child {
+  padding-left: 20px;
+}
+.users-list th {
+  text-align: left;
+  padding: 10px 0;
+  font-weight: normal;
+  color: #a4a4a4;
+}
+.users-list tr.active-row {
+  border-left: 2px solid #578aa7;
+}
+.active-row td {
+  background: #eeeeee;
 }

@@ -9,10 +9,14 @@ const UserInfo = (props) => {
 
   return (
     <div className="user-info">
+      <div className="user-info__title">
+        <div>Информация о пациенте</div>
+        <div className="user-info__icon">&lt;</div>
+      </div>
       <ul>
-        <li>ФИО {props.current.firstName} {props.current.patrName} {props.current.lastName}</li>
-        <li>Возраст {get_age(props.current.birthDate)}</li>
-        <li>Диагноз {props.current.diagnosis}</li>
+        <li>ФИО: <span className="user-info__line">{props.current.firstName} {props.current.patrName} {props.current.lastName}</span></li>
+        <li>Возраст: <span className="user-info__line">{get_age(props.current.birthDate)}</span></li>
+        <li>Диагноз: <span className="user-info__line">{props.current.diagnosis}</span></li>
       </ul>
     </div>
   )

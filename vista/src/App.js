@@ -71,10 +71,14 @@ function App() {
       </header>
       <main>
         <UserInfo current={current} />
-        <div id="resizer"></div>
+        <div id="resizer">
+          <div className="resizer__icon">.<br/>.<br/>.</div>
+        </div>
         <UsersList
           category={category}
-          list={category === 1 ? present : quitting} 
+          present={present} 
+          quitting={quitting}
+          current={current} 
           handleCategory={handleCategory} 
           userClick={(value) => userClick(value)}
         />
